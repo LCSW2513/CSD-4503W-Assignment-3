@@ -1,0 +1,109 @@
+Microsoft Windows [Version 10.0.26200.7623]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\eldho>git config --global user.name "LCSW2513"
+
+C:\Users\eldho>git config --global user.email "C0956054@mylambton.ca"
+
+C:\Users\eldho>git config --global --list
+core.editor="C:\Users\eldho\AppData\Local\Programs\Microsoft VS Code\bin\code" --wait
+user.name=LCSW2513
+user.email=C0956054@mylambton.ca
+
+C:\Users\eldho>mkdir Assignment01
+
+C:\Users\eldho>cd Assignment01
+
+C:\Users\eldho\Assignment01>git init
+Initialized empty Git repository in C:/Users/eldho/Assignment01/.git/
+
+C:\Users\eldho\Assignment01>echo "This is file01" > file01.txt
+
+C:\Users\eldho\Assignment01>mkdir Subfolder01
+
+C:\Users\eldho\Assignment01>echo "This is file02" > .\Subfolder01\file02.txt
+
+C:\Users\eldho\Assignment01>git add .
+
+C:\Users\eldho\Assignment01>git commit -m "Initial commit: added files and subfolder"
+[master (root-commit) de35d43] Initial commit: added files and subfolder
+ 2 files changed, 2 insertions(+)
+ create mode 100644 Subfolder01/file02.txt
+ create mode 100644 file01.txt
+
+C:\Users\eldho\Assignment01>https://github.com/LCSW2513/Assignment01.git
+'https:' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\eldho\Assignment01>git remote add origin https://github.com/LCSW2513/Assignment01.git
+
+C:\Users\eldho\Assignment01>git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/LCSW2513/Assignment01.git'
+
+C:\Users\eldho\Assignment01>git branch
+* master
+
+C:\Users\eldho\Assignment01>git branch -m main
+
+C:\Users\eldho\Assignment01>git push -u origin main
+remote: Repository not found.
+fatal: repository 'https://github.com/LCSW2513/Assignment01.git/' not found
+
+C:\Users\eldho\Assignment01>git remote remove origin
+
+C:\Users\eldho\Assignment01>git remote add origin https://github.com/LCSW2513/Assignment01.git
+
+C:\Users\eldho\Assignment01>git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 367 bytes | 122.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/LCSW2513/Assignment01.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+C:\Users\eldho\Assignment01>git checkout -b feature-beta
+Switched to a new branch 'feature-beta'
+
+C:\Users\eldho\Assignment01>echo "This is a new line from feature-beta branch" >> .\Subfolder01\file02.txt
+
+C:\Users\eldho\Assignment01>git add .
+
+C:\Users\eldho\Assignment01>git commit -m "Changed file02.txt in branch"
+[feature-beta 2151909] Changed file02.txt in branch
+ 1 file changed, 1 insertion(+)
+
+C:\Users\eldho\Assignment01>git push -u origin feature-beta
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 403 bytes | 403.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'feature-beta' on GitHub by visiting:
+remote:      https://github.com/LCSW2513/Assignment01/pull/new/feature-beta
+remote:
+To https://github.com/LCSW2513/Assignment01.git
+ * [new branch]      feature-beta -> feature-beta
+branch 'feature-beta' set up to track 'origin/feature-beta'.
+
+C:\Users\eldho\Assignment01>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+C:\Users\eldho\Assignment01>git merge feature-beta
+Updating de35d43..2151909
+Fast-forward
+ Subfolder01/file02.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+C:\Users\eldho\Assignment01>git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/LCSW2513/Assignment01.git
+   de35d43..2151909  main -> main
+
+C:\Users\eldho\Assignment01>
